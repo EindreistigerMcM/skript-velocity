@@ -52,4 +52,14 @@ on right click with a feather:
         loop all entities in radius 10 of player:
             set velocity of loop-entity away from player at speed 3
 ```
-## [Latest Release 1.0.0](https://github.com/EindreistigerMcM/skript-velocity/releases/download/release/skript-velo-1.0.jar)
+
+### Vector
+`set velocity [of] %entity% to vector %number%, %number%, %number% [at speed %number%]`
+
+Example command that pushes the player upwards using Vector:
+```
+command /vector:
+    trigger:
+        set velocity of player to vector 0, 1, 0 at speed 1
+```
+## [Latest Release 1.0.1](https://github.com/EindreistigerMcM/skript-velocity/releases/download/1.0.1/skript-velo-1.0.1.jar)
