@@ -6,6 +6,8 @@ Like in the name Skript Velocity handles Velocity stuff. Currently there is only
 - left, right, forward, backward
 - away from, towards
 
+For now this Plugin is only available for 1.21.1. In Future it will support all versions above 1.21.1.
+
 ### Example
 
 ```
@@ -32,7 +34,7 @@ command /launch:
         set velocity of player to up at speed 2
 ```
 ### Towards
-` set velocity [of] %entity% towards %entity% at speed %number%`
+` set velocity of %entity% towards (%entity%|%location%) at speed %number%`
 
 Example Item that will Pull Mobs towards the player with a feather:
 ```
@@ -41,9 +43,10 @@ on right click with a feather:
         loop all entities in radius 10 of player:
             set velocity of loop-entity towards player at speed 3
 ```
+ If you want to use locations you need to use `location(x, y, z) for now. In Future it will support Location Variables.
  
  ### Away From
-` set velocity [of] %entity% away from %entity% at speed %number%`
+` set velocity of %entity% away from (%entity%|%location%) at speed %number%`
 
 Example Item that will Push Mobs Away from the Player with a feather:
 ```
@@ -52,6 +55,7 @@ on right click with a feather:
         loop all entities in radius 10 of player:
             set velocity of loop-entity away from player at speed 3
 ```
+If you want to use locations you need to use `location(x, y, z) for now. In Future it will support Location Variables.
 
 ### Vector
 `set velocity [of] %entity% to vector %number%, %number%, %number% [at speed %number%]`
@@ -62,4 +66,7 @@ command /vector:
     trigger:
         set velocity of player to vector 0, 1, 0 at speed 1
 ```
-## [Latest Release 1.0.1](https://github.com/EindreistigerMcM/skript-velocity/releases/download/1.0.1/skript-velo-1.0.1.jar)
+
+
+
+## [Latest Release 1.0.2](https://github.com/EindreistigerMcM/skript-velocity/releases/download/1.0.2/skript-velo-1.0.2.jar)
