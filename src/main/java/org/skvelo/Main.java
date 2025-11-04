@@ -30,11 +30,12 @@ public class Main extends JavaPlugin {
         Skript.registerEffect(EffVelocity.class,
                 "set velocity of %entity% to (north|south|east|west|up|down|forward|backward|left|right) at speed %number%",
                 "set velocity of %entity% towards %entity% at speed %number%",
-                "set velocity of %entity% towards %location% at speed %number%",
+                "set velocity of %entity% towards %object% at speed %number%",
                 "set velocity of %entity% away from %entity% at speed %number%",
-                "set velocity of %entity% away from %location% at speed %number%",
+                "set velocity of %entity% away from %object% at speed %number%",
                 "set velocity of %entity% to vector %number%, %number%, %number% at speed %number%"
         );
+
 
 
 
