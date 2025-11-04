@@ -6,7 +6,7 @@ Like in the name Skript Velocity handles Velocity stuff. Currently there is only
 - left, right, forward, backward
 - away from, towards
 
-For now this Plugin is only available for 1.21.1. In Future it will support all versions above 1.21.1.
+This Plugin supports all 1.21.x version.
 
 ### Example
 
@@ -43,7 +43,7 @@ on right click with a feather:
         loop all entities in radius 10 of player:
             set velocity of loop-entity towards player at speed 3
 ```
- If you want to use locations you need to use `location(x, y, z) for now. In Future it will support Location Variables.
+If you want to use locations you can use `location(x, y, z)´ or a variable
  
  ### Away From
 ` set velocity of %entity% away from (%entity%|%location%) at speed %number%`
@@ -55,7 +55,7 @@ on right click with a feather:
         loop all entities in radius 10 of player:
             set velocity of loop-entity away from player at speed 3
 ```
-If you want to use locations you need to use `location(x, y, z) for now. In Future it will support Location Variables.
+If you want to use locations you can use `location(x, y, z)´ or a variable
 
 ### Vector
 `set velocity [of] %entity% to vector %number%, %number%, %number% [at speed %number%]`
@@ -69,4 +69,4 @@ command /vector:
 
 
 
-## [Latest Release 1.0.2](https://github.com/EindreistigerMcM/skript-velocity/releases/download/1.0.2/skript-velo-1.0.2.jar)
+## [Latest Release 1.0.3](https://github.com/EindreistigerMcM/skript-velocity/releases/download/1.0.3/skript-velo-1.0.3.jar)
