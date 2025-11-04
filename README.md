@@ -1,6 +1,6 @@
 # Skript Velocity 
 ## What can you do with Skript Velocity?
-Like in the name Skript Velocity handles Velocity stuff. Currently there is only the Directions as in
+Like in the name Skript Velocity handles Velocity stuff.
 
 - north, west, east, south, up, down
 - left, right, forward, backward
@@ -67,6 +67,7 @@ command /vector:
         set velocity of player to vector 0, 1, 0 at speed 1
 ```
 
-
+## Suggestions?
+Make an issue here if you have a suggestion or any issues with this Addon. Thank you!
 
 ## [Latest Release 1.0.3](https://github.com/EindreistigerMcM/skript-velocity/releases/download/1.0.3/skript-velo-1.0.3.jar)
