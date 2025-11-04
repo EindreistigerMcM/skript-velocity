@@ -43,7 +43,7 @@ on right click with a feather:
         loop all entities in radius 10 of player:
             set velocity of loop-entity towards player at speed 3
 ```
-If you want to use locations you can use `location(x, y, z)´ or a variable
+If you want to use locations you can use `location(x, y, z)` or a variable
  
  ### Away From
 ` set velocity of %entity% away from (%entity%|%location%) at speed %number%`
@@ -55,7 +55,7 @@ on right click with a feather:
         loop all entities in radius 10 of player:
             set velocity of loop-entity away from player at speed 3
 ```
-If you want to use locations you can use `location(x, y, z)´ or a variable
+If you want to use locations you can use `location(x, y, z)` or a variable
 
 ### Vector
 `set velocity [of] %entity% to vector %number%, %number%, %number% [at speed %number%]`
