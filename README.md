@@ -25,7 +25,7 @@ on right click with a feather:
 If you want to write your own code you need the docs, for now you the only docs are in here:
 
 ### Directions
-`set velocity [of] %entity% [to] (north|south|east|west|up|down|forward|backward|left|right) at speed %number%`
+`set velocity [of] %entity% to (north|south|east|west|up|down|forward|backward|left|right) at speed %number%`
 
 Example Command to Push the player upwards:
 ```
