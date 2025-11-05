@@ -1,4 +1,5 @@
 # Skript Velocity 
+[![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=SkVelo)
 ## What can you do with Skript Velocity?
 Like in the name Skript Velocity handles Velocity stuff.
 
@@ -21,8 +22,6 @@ on right click with a feather:
 ```
 
 ## Structured
-
-If you want to write your own code you need the docs, for now you the only docs are in here:
 
 ### Directions
 `set velocity [of] %entity% to (north|south|east|west|up|down|forward|backward|left|right) at speed %number%`
