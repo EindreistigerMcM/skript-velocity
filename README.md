@@ -70,4 +70,4 @@ command /vector:
 ## Suggestions?
 Make an issue here if you have a suggestion or any issues with this Addon. Thank you!
 
-## [Latest Release 1.0.3](https://github.com/EindreistigerMcM/skript-velocity/releases/download/1.0.3/skript-velo-1.0.3.jar)
+## [Latest Release 1.0.4](https://github.com/EindreistigerMcM/skript-velocity/releases/download/1.0.4/skript-velo-1.0.4.jar)
