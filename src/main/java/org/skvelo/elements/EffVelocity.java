@@ -21,20 +21,29 @@ public class EffVelocity extends Effect {
     private int pattern;
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean kleenean, ParseResult parseResult) {
         entityExpr = (Expression<Entity>) exprs[0];
         pattern = matchedPattern;
 
         switch (matchedPattern) {
-            case 0 -> {
-                direction = parseResult.regexes.get(0).group();
-                speedExpr = (Expression<Number>) exprs[1];
-            }
-            case 1, 2, 3, 4 -> {
+            case 0 -> { direction = "north"; speedExpr = (Expression<Number>) exprs[1]; }
+            case 1 -> { direction = "south"; speedExpr = (Expression<Number>) exprs[1]; }
+            case 2 -> { direction = "east";  speedExpr = (Expression<Number>) exprs[1]; }
+            case 3 -> { direction = "west";  speedExpr = (Expression<Number>) exprs[1]; }
+            case 4 -> { direction = "up";    speedExpr = (Expression<Number>) exprs[1]; }
+            case 5 -> { direction = "down";  speedExpr = (Expression<Number>) exprs[1]; }
+            case 6 -> { direction = "forward"; speedExpr = (Expression<Number>) exprs[1]; }
+            case 7 -> { direction = "backward"; speedExpr = (Expression<Number>) exprs[1]; }
+            case 8 -> { direction = "left";  speedExpr = (Expression<Number>) exprs[1]; }
+            case 9 -> { direction = "right"; speedExpr = (Expression<Number>) exprs[1]; }
+
+            case 10, 11, 12, 13 -> {
                 target = exprs[1];
                 speedExpr = (Expression<Number>) exprs[2];
             }
-            case 5 -> {
+
+            case 14 -> {
                 x = (Expression<Number>) exprs[1];
                 y = (Expression<Number>) exprs[2];
                 z = (Expression<Number>) exprs[3];
@@ -57,9 +66,10 @@ public class EffVelocity extends Effect {
 
         try {
             switch (pattern) {
-                case 0 -> {
+                // directions (0..9)
+                case 0,1,2,3,4,5,6,7,8,9 -> {
                     Location loc = ent.getLocation();
-                    switch (direction.toLowerCase()) {
+                    switch (direction) {
                         case "north" -> vec.setZ(-speed);
                         case "south" -> vec.setZ(speed);
                         case "east" -> vec.setX(speed);
@@ -81,7 +91,7 @@ public class EffVelocity extends Effect {
                     }
                 }
 
-                case 1, 2 -> {
+                case 10, 11 -> {
                     Location targetLoc = resolveLocationRobust(e, target);
                     if (targetLoc == null) {
                         Bukkit.getLogger().info("[SkVelo] Could not resolve target location (towards).");
@@ -90,7 +100,7 @@ public class EffVelocity extends Effect {
                     vec = targetLoc.toVector().subtract(ent.getLocation().toVector());
                 }
 
-                case 3, 4 -> {
+                case 12, 13 -> {
                     Location targetLoc = resolveLocationRobust(e, target);
                     if (targetLoc == null) {
                         Bukkit.getLogger().info("[SkVelo] Could not resolve target location (away).");
@@ -99,7 +109,7 @@ public class EffVelocity extends Effect {
                     vec = ent.getLocation().toVector().subtract(targetLoc.toVector());
                 }
 
-                case 5 -> {
+                case 14 -> {
                     double vx = x.getSingle(e).doubleValue();
                     double vy = y.getSingle(e).doubleValue();
                     double vz = z.getSingle(e).doubleValue();
@@ -108,7 +118,11 @@ public class EffVelocity extends Effect {
             }
 
             if (vec.lengthSquared() == 0) return;
-            vec.normalize().multiply(speed);
+            vec = vec.normalize().multiply(speed);
+            if (!Double.isFinite(vec.getX()) || !Double.isFinite(vec.getY()) || !Double.isFinite(vec.getZ())) {
+                Bukkit.getLogger().warning("[SkVelo] Computed vector not finite; skipping.");
+                return;
+            }
             ent.setVelocity(vec);
 
         } catch (Exception ex) {
